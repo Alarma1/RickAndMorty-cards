@@ -1,29 +1,20 @@
-# rickandmorty-cards
+[Демо](https://alarma1.github.io/RickAndMorty-cards-demo/)  
+[Ссылка на проект](https://github.com/Alarma1/RickAndMorty-cards)
+# Задача
 
-This template should help get you started developing with Vue 3 in Vite.
+Создать страницу, на которой можно будет просматривать персонажей из Рика и Морти с помощью открытого API.
 
-## Recommended IDE Setup
+## Формальные требования к выполнению задачи
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+- Использовать Vue 3 или Vue 2, Composition API.
+- Персонажей выводить в виде карточек, как в источнике. Ссылки на карточке заменить на обычный текст.
+- Реализовать пагинацию с помощью API.
+- Реализовать фильтрацию по полям "name" и "status" с помощью API. Фильтрация должна применяться по нажатию на кнопку "Применить".
+- Для элементов пагинации и фильтрации можно использовать обычные HTML теги (input, select) без стилизации.
+- Код разместить в репозитории GitHub.
+- Готовое приложение разместить на GitHub Pages или аналогичном сервисе.
 
-## Customize configuration
+## Источник данных
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
+- Сайт: [Rick and Morty API](https://rickandmortyapi.com/)
+- Документация размещена на сайте.
