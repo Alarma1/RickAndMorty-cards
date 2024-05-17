@@ -2,14 +2,22 @@ import {defineStore} from 'pinia'
 
 export const useCounterStore = defineStore('counter', {
     state: () => ({
+        url: 'https://rickandmortyapi.com/api',
         loading: null,
+        data:[],
         characters: [],
     }),
     actions: {
-        gettingCharactersAction() {
+        gettingCharactersAction(obj) {
+            let urlForDownload = this.url + `/character/?page=${obj.page}`
+            if (obj.name !== '' && obj.name !== undefined) {
+                urlForDownload += `&name=${obj.name}`
+            }
+            if (obj.status !== '' && obj.status !== undefined) {
+                urlForDownload += `&status=${obj.status}`
+            }
             this.loading = true;
-            console.log(123)
-            return fetch('https://rickandmortyapi.com/api/character?pages', {
+            return fetch(urlForDownload, {
                 method: "GET"
             })
                 .then(response => {
@@ -19,8 +27,8 @@ export const useCounterStore = defineStore('counter', {
                     return response.json();
                 })
                 .then(responseJson => {
+                    this.data = responseJson
                     this.characters = responseJson.results
-                    console.log(this.characters)
                     this.loading = false;
                     return responseJson
                 })
@@ -28,6 +36,6 @@ export const useCounterStore = defineStore('counter', {
                     console.error('Произошла ошибка:', error);
                     this.loading = false;
                 });
-        }
+        },
     }
 })
